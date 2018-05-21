@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width,maximum-scale=1.0,minimum-scale=1.0,initial-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-compatible" content="IE=edge,chrome=1.0">
+    <meta name="format-detection" content="telephone=no,email=no">
+    <title>Document</title>
+    <link href="css/fileUpload.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="icon/iconfont.css">
+</head>
+<body>
+    <div class="warp">
+        <header class="header">
+            <a href=""><i class="iconfont">&#xe653;</i>返回</a>
+            <a href="" class="a2">爱心筹-发布</a>
+            <a href=""><i class="iconfont">&#xe6f5;</i></a>
+        </header>
+        <section>
+            <div class="sec_top">
+                <ul>
+                    <li><h3>| 大病救助</h3></li>
+                    <li><span>目标金额</span><span>170000.00</span></li>
+                    <li><span>资金用途</span><span>白血病治疗</span></li>
+                    <li>
+                        <span>截止日期</span><span>2016-08-10  10:10 共十天</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="sec_con">
+                <ul>
+                    <li>请救救我患白血病的女儿，他还想参加中考</li>
+                    <li>
+                        <p>建议描述详情信息...</p>
+                    </li>
+                    <li>
+                        <i>项目内容如果违反规定不通过项目内容如果违反规定不通过项目内容如果违反规定不通过项目内容如</i>
+                    </li>
+                    <li>
+                        <div class="imgs">
+
+                                    <div id="fileUploadContent" class="fileUploadContent"></div>
+
+                                    <button onclick="testUpload()">提交</button>
+
+                        </div>
+                    </li>
+                    <li>
+                         <span>发起的大病救助项目，建议上传患者照片提高可信度</span>
+
+                        <div class="btn">
+                            发布项目
+                        </div>
+
+                        !项目已经发布，不能修改
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </div>
+    <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="js/fileUpload.js"></script>
+    <script type="text/javascript">
+    $("#fileUploadContent").initUpload({
+        "uploadUrl":"#",//上传文件信息地址
+        "maxFileNumber":3,//文件个数限制，为整数
+        "filelSavePath":"http://localhost:8080/src",//文件上传地址，后台设置的根目录
+        "fileType":['png','jpg','docx','doc']//文件类型限制，默认不限制，注意写的是文件后缀
+    });
+
+    function testUpload(){
+        var opt = uploadTools.getOpt("fileUploadContent");
+        uploadEvent.uploadFileEvent(opt);
+    }
+</script>
+</body>
+</html>
